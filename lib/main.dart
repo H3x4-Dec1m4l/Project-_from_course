@@ -6,8 +6,7 @@ import './result.dart';
 main() => runApp(questionApp());
 
 class _questionAppState extends State<questionApp> {
-var _selectedQuestion = 0;
-var _totalnote = 0;
+
 
 final List<Map<String, Object>> _question = const [
       {
@@ -23,7 +22,7 @@ final List<Map<String, Object>> _question = const [
         'Texto': 'qual é seu Personagem favorito?',
       'Resposta': [
         {'text': 'Hinata', 'grade': 10},
-        {'text': 'Buma', 'grade': 5},
+        {'text': 'Buma', 'grade': 3},
         {'text': 'Ioruichi', 'grade': 9},
         {'text': 'touka', 'grade': 7},
       ]
@@ -34,11 +33,13 @@ final List<Map<String, Object>> _question = const [
         {'text': 'Preto', 'grade': 10},
         {'text': 'Vermelho', 'grade': 7},
         {'text': 'Azul', 'grade': 5},
-        {'text': 'Rosa', 'grade': 4},
+        {'text': 'Rosa', 'grade': 3},
       ]
       }
     ];
 
+    var _selectedQuestion = 0;
+var _totalnote = 0; 
     void _answer(int note){
       if(haveQuestionSelected){
       setState(() {
@@ -71,7 +72,7 @@ return MaterialApp(
       answer: _answer,
       selectedQuestions: _selectedQuestion,
       questions: _question,
-    ):Result('Resultado das perguntas selecionadas') ,
+    ):Result( _totalnote) ,
     
   
   )
